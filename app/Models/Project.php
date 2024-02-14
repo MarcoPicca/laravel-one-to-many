@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Type;
 
 class Project extends Model
 {
@@ -18,4 +19,8 @@ class Project extends Model
         'date',
         'description',
     ];
+
+    public function type(){
+        return $this->belongsto(Type::class);
+    }
 }
