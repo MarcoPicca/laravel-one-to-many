@@ -20,10 +20,10 @@ class TypeSeeder extends Seeder
             'Front-End'
         ];
 
-        foreach ($types as $type){
-            $types = new Type();
-            $types->name = $type;
-            $types->save();
+        foreach ($types as $oneType){
+            $type = new Type();
+            $type->name = $oneType;
+            $type->save();
         }
     }
 }

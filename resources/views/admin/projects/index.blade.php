@@ -10,6 +10,7 @@
                             <tr>
                                 <th scope="col">id</th>
                                 <th scope="col">titolo</th>
+                                <th scope="col">Tipo di sviluppo</th>
                                 <th scope="col">immagine</th>
                                 <th scope="col">data</th>
                                 <th scope="col">descrizione</th>
@@ -19,11 +20,12 @@
                         <tbody>
                             @foreach ($projects as $project)
                             <tr>
-                                <td>{{ $project['id'] }} </td>
-                                <td>{{ $project['title'] }} </td>
-                                <td>{{ $project['image_url'] }} </td>
-                                <td>{{ $project['date'] }} </td>
-                                <td>{{ $project['description'] }} </td>
+                                <td>{{ $project->id }} </td>
+                                <td>{{ $project->title }} </td>
+                                <td>{{ $project->type->name }} </td>
+                                <td>{{ $project->image_url }} </td>
+                                <td>{{ $project->date }} </td>
+                                <td>{{ $project->description }} </td>
                                 
                                 <td>
                                     <a href="{{ route('admin.projects.show', $project) }}" class="text-decoration-none">
